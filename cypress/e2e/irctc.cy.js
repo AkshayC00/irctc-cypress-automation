@@ -21,7 +21,8 @@ describe('IRCTC TATKAL BOOKING', () => {
     cy.clearCookies()
     cy.clearLocalStorage()
     cy.viewport(1478, 1056)
-    cy.visit('https://www.irctc.co.in/nget/train-search', {
+    const baseUrl = Cypress.env('BASE_URL') || 'https://www.irctc.co.in';
+    cy.visit(baseUrl + '/nget/train-search', {
       failOnStatusCode: false,
       timeout: 90000
     })
